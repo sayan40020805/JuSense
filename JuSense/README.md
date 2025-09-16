@@ -1,12 +1,98 @@
-# React + Vite
+# JuSense - Real-time Polling Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based polling application with real-time updates using Socket.io.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User authentication (signup/login)
+- Create and manage polls
+- Real-time voting with live updates
+- View poll results with charts
+- Responsive design
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React, Vite, React Router
+- **Backend**: Node.js, Express, Socket.io
+- **Database**: MongoDB
+- **Styling**: CSS
+
+## Development Setup
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   - Copy `.env` file and update `VITE_API_BASE_URL` if needed
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Deployment
+
+### Backend Deployment
+
+The backend needs to be deployed separately since Vercel is primarily for frontend applications. You can deploy it to:
+
+- **Railway**: Recommended for Node.js apps with MongoDB
+- **Heroku**: Traditional choice for Node.js applications
+- **Vercel Serverless Functions**: Convert Express routes to serverless functions
+
+For Railway deployment:
+1. Create a Railway account
+2. Connect your GitHub repository
+3. Add environment variables (MONGO_URI, PORT, etc.)
+4. Deploy
+
+### Frontend Deployment to Vercel
+
+1. **Build the project**:
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy to Vercel**:
+   - Connect your GitHub repository to Vercel
+   - Set environment variable: `VITE_API_BASE_URL=https://your-backend-url.vercel.app/api`
+   - Deploy
+
+3. **Update backend URL**:
+   - After deploying the backend, update the `VITE_API_BASE_URL` in Vercel environment variables
+   - The `.env.production` file contains a placeholder that should be replaced
+
+### Environment Variables
+
+- **Development**: Uses `.env` file
+- **Production**: Set in Vercel dashboard or `.env.production`
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+JuSense/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   ├── styles/
+│   └── constants.js
+├── public/
+└── package.json
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
