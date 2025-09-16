@@ -1,0 +1,4 @@
+- [x] Create PollResultsPage.jsx in JuSense/src/pages/
+- [x] Add route /poll/:id/results in App.jsx
+- [x] Modify PollList.jsx to link poll question to /poll/:id/results when showShare=true
+- [x] Test the functionality

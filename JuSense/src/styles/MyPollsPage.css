@@ -1,0 +1,53 @@
+.my-polls-page {
+  min-height: calc(100vh - 70px);
+  background: linear-gradient(135deg, #000000, #0a0a0a);
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.my-polls-page h1 {
+  color: #00d4ff;
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 50px;
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-state h2 {
+  color: #00d4ff;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.empty-state p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .my-polls-page {
+    padding: 20px 10px;
+  }
+
+  .my-polls-page h1 {
+    font-size: 36px;
+  }
+
+  .empty-state h2 {
+    font-size: 24px;
+  }
+
+  .empty-state p {
+    font-size: 16px;
+  }
+}

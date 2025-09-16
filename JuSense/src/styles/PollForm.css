@@ -1,0 +1,115 @@
+.poll-form {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  max-width: 600px;
+  width: 100%;
+  margin: 50px auto;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.poll-form h2 {
+  color: #00d4ff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.poll-form label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.poll-form input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.poll-form input[type="text"]:focus {
+  outline: none;
+  border-color: #00d4ff;
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.poll-form input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.option-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.option-input input {
+  flex: 1;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.remove-option {
+  background: #ff4757;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.remove-option:hover {
+  background: #ff3742;
+  box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: #00d4ff;
+}
+
+@media (max-width: 768px) {
+  .poll-form {
+    padding: 30px 20px;
+    margin: 30px auto;
+  }
+
+  .poll-form h2 {
+    font-size: 24px;
+  }
+
+  .option-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .option-input input {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

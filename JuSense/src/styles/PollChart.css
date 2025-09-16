@@ -1,0 +1,97 @@
+.poll-chart {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  max-width: 600px;
+  width: 100%;
+  margin: 30px auto;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.poll-chart h3 {
+  color: #00d4ff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 24px;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chart-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.option-text {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.vote-count {
+  color: #00d4ff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #00d4ff, #090979);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.percentage {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.total-votes {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .poll-chart {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .poll-chart h3 {
+    font-size: 20px;
+  }
+
+  .chart-container {
+    gap: 15px;
+  }
+
+  .progress-bar {
+    height: 16px;
+  }
+}
