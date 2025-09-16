@@ -1,4 +1,3 @@
-- [x] Create PollResultsPage.jsx in JuSense/src/pages/
-- [x] Add route /poll/:id/results in App.jsx
-- [x] Modify PollList.jsx to link poll question to /poll/:id/results when showShare=true
-- [x] Test the functionality
+# TODO: Update Backend URL
+
+- [x] Update API_BASE_URL in JuSense/src/constants.js to 'https://backend1-1-1dic.onrender.com/api'
