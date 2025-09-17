@@ -31,7 +31,7 @@ const PollVotePage = () => {
           return;
         }
         setPoll(fetchedPoll);
-        if (isAuthenticated && fetchedPoll.voters.some(voter => voter.user && (voter.user === user.id || voter.user.toString() === user.id.toString()))) {
+        if (isAuthenticated && fetchedPoll.voters.some(voter => voter.user && voter.user._id === user.id)) {
           setHasVoted(true);
         }
       } catch (err) {
@@ -42,6 +42,11 @@ const PollVotePage = () => {
       }
     };
     fetchPoll();
+
+    // Polling for real-time updates every 5 seconds
+    const interval = setInterval(fetchPoll, 5000);
+
+    return () => clearInterval(interval);
   }, [id, getPollById, isAuthenticated, user]);
 
   const handleVote = async () => {
@@ -50,7 +55,7 @@ const PollVotePage = () => {
         alert('You must be logged in to vote on private polls');
         return;
       }
-      if (isAuthenticated && poll.voters.some(voter => voter.user === user.id || voter === user.id)) {
+      if (isAuthenticated && poll.voters.some(voter => voter.user && voter.user._id === user.id)) {
         alert('You have already voted on this poll');
         return;
       }
