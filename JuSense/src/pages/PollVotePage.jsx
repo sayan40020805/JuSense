@@ -42,17 +42,12 @@ const PollVotePage = () => {
       }
     };
     fetchPoll();
-
-    // Polling for real-time updates every 5 seconds
-    const interval = setInterval(fetchPoll, 5000);
-
-    return () => clearInterval(interval);
   }, [id, getPollById, isAuthenticated, user]);
 
   const handleVote = async () => {
     if (selectedOption !== null) {
-      if (!poll.isPublic && !isAuthenticated) {
-        alert('You must be logged in to vote on private polls');
+      if (!isAuthenticated) {
+        alert('You must be logged in to vote on this poll');
         return;
       }
       if (isAuthenticated && poll.voters.some(voter => voter.user && voter.user._id === user.id)) {
@@ -81,7 +76,7 @@ const PollVotePage = () => {
     return <div className="error">Poll not found</div>;
   }
 
-  const canVote = isAuthenticated;
+  const canVote = isAuthenticated && !hasVoted;
 
   return (
     <div className="poll-vote-page">

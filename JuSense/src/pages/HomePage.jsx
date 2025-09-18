@@ -7,9 +7,9 @@ const HomePage = () => {
   const { polls } = usePolls();
   const { isAuthenticated, user } = useAuth();
 
-  // Show all public polls and user's own polls if authenticated
+  // Show user's polls if authenticated
   const visiblePolls = polls.filter(poll =>
-    poll.isPublic || (isAuthenticated && poll.creatorId === user?.id)
+    isAuthenticated && poll.creator._id === user?.id
   );
 
   return (

@@ -107,12 +107,35 @@ export const PollProvider = ({ children }) => {
     }
   };
 
+  const deletePoll = async (pollId) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}/polls/${pollId}`, {
+        method: 'DELETE',
+        headers: {
+          ...getAuthHeaders(),
+        },
+      });
+      if (response.status === 401) {
+        logout();
+        throw new Error('Authentication failed, please login again');
+      }
+      if (!response.ok) {
+        throw new Error('Failed to delete poll');
+      }
+      setPolls(prev => prev.filter(poll => poll._id !== pollId));
+    } catch (error) {
+      console.error('Error deleting poll:', error);
+      throw error;
+    }
+  };
+
   const value = {
     polls,
     createPoll,
     voteOnPoll,
     getPollById,
     getPollsByUser,
+    deletePoll,
   };
 
   return (
